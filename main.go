@@ -45,7 +45,7 @@ func main() {
 }
 
 func do(c *cli.Context) error {
-	if c.Bool("help") || len(c.Args()) == 0 {
+	if c.Bool("help") {
 		cli.ShowAppHelp(c)
 		return nil
 	}
