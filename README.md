@@ -1,7 +1,6 @@
 # sts - Stats
 
 ## Usage
-
 ```sh
 NAME:
    sts - pronounced 'stats'
