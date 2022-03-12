@@ -20,6 +20,7 @@ jobs:
       - name: Set up latest version of Go
         uses: actions/setup-go@v2
         with:
+          go-version: '1.x'
           check-latest: true
         id: go
 
