@@ -2,8 +2,9 @@ name: Release Go project
 
 on:
   push:
-    tags:
-      - "*" # triggers only if push new tag version, like `0.8.4`
+    branches: [ $default-branch ]
+  pull_request:
+    branches: [ $default-branch ]
 
 jobs:
   build:
@@ -16,10 +17,10 @@ jobs:
         with:
           fetch-depth: 0 # See: https://goreleaser.com/ci/actions/
 
-      - name: Set up Go 1.15
+      - name: Set up latest version of Go
         uses: actions/setup-go@v2
         with:
-          go-version: 1.15
+          check-latest: true
         id: go
 
       - name: Run GoReleaser
