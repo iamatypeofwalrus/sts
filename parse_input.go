@@ -5,7 +5,7 @@ import (
 	"io"
 	"strings"
 
-	"gonum.org/v1/gonum/floats"
+	"gonum.org/v1/gonum/floats/scalar"
 )
 
 func parseInput(r io.Reader, missing string) (vals []float64, weights []float64, err error) {
@@ -21,7 +21,7 @@ func parseInput(r io.Reader, missing string) (vals []float64, weights []float64,
 			continue
 		}
 
-		val, weight, scanErr := floats.ParseWithNA(input, missing)
+		val, weight, scanErr := scalar.ParseWithNA(input, missing)
 		err = scanErr
 		if err != nil {
 			return
