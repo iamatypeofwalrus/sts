@@ -20,6 +20,9 @@ jobs:
           check-latest: true
         id: go
 
+      - name: Test
+        run: go test -v ./...
+
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v2
         with:
