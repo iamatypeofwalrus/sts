@@ -20,14 +20,11 @@ jobs:
           check-latest: true
         id: go
 
-      - name: Test
-        run: go test -v ./...
-
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v2
         with:
           distribution: goreleaser
           version: latest
-          args: release --rm-dist --debug
+          args: release --rm-dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
